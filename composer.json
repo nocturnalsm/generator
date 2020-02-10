@@ -12,6 +12,11 @@
             "email": "basugi99@gmail.com"
         }
     ],
+    "extra": {        
+        "branch-alias": {
+            "master": "1.0-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "NocturnalSm\\NumberGenerator\\": "src"
