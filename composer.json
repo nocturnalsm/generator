@@ -15,6 +15,11 @@
     "extra": {        
         "branch-alias": {
             "master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "NocturnalSm\\NumberGenerator\\NumberGeneratorProvider"
+            ]
         }
     },
     "autoload": {
