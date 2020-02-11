@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateNumberGeneratorTables extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+
+        Schema::create("$tableNames['numbers']", function (Blueprint $table) {
+            $table->string('prefix');
+            $table->string('digit');
+            $table->primary(['prefix', 'digit'],'numbers_primary');
+
+        });
+
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        $tableNames = config('numbergenerator.numbers');
+
+        Schema::drop($tableNames['numbers']);
+        
+    }
+}
