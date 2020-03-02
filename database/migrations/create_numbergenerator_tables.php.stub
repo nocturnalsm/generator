@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNumberGeneratorTables extends Migration
+class CreateNumbergeneratorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,10 @@ class CreateNumberGeneratorTables extends Migration
     public function up()
     {
 
-        Schema::create("$tableNames['numbers']", function (Blueprint $table) {
+        Schema::create("numbers", function (Blueprint $table) {
             $table->string('prefix');
-            $table->string('digit');
-            $table->primary(['prefix', 'digit'],'numbers_primary');
+            $table->string('increments');
+            $table->primary(['prefix', 'increments'],'numbers_primary');
 
         });
 
@@ -29,10 +29,7 @@ class CreateNumberGeneratorTables extends Migration
      * @return void
      */
     public function down()
-    {
-        $tableNames = config('numbergenerator.numbers');
-
-        Schema::drop($tableNames['numbers']);
-        
+    {        
+        Schema::dropIfExists("numbers");        
     }
 }
