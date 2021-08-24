@@ -1,0 +1,27 @@
+{
+    "name": "nocturnalsm/generator",
+    "description": "Code Number Generator for PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bambang Sugiarto",
+            "email": "basugi99@gmail.com"
+        }
+    ],
+    "extra": {        
+        "branch-alias": {
+            "master": "1.1-dev"
+        },
+        "laravel": {
+            "providers": [
+                "NocturnalSm\\Generator\\GeneratorProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "NocturnalSm\\Generator\\": "src"
+        }        
+    }
+}
